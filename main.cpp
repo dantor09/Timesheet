@@ -15,6 +15,7 @@ class LinkedList
 private:
     Family *head;
     Family *copy;
+    int weekday;
     Family *create()
     {
         Family *newnode = new Family;
@@ -27,30 +28,38 @@ public:
     {
         head = NULL;
         copy = head;
+        weekday = 0;
     }
-    void add(string n, string a) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
+    void add(string n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
-        Family *newnode = create();
-        if (head == NULL)
+        if(weekday ==8)
         {
-            head = newnode;
-            head->array[0] = n;
-            head->array[1] = n;
-            head->next = NULL;
-            copy = head;
+            weekday = 0;
         }
+
+        Family *newnode = create();
+        
         if (head != NULL)
-        {
+        {    cout<<"In here "<< "Name: "<< n<< endl;
             while (copy->next != NULL)
             {
                 copy = copy->next;
             }
             copy->next = newnode;
-            copy->next->array[0] = n;
-            copy->next->array[1] = a;
+            copy->next->array[weekday] = n;
             newnode->next = NULL;
             copy = head;
+            weekday++;
         }
+        if (head == NULL)
+        {   cout<<"In here "<< "Name: "<< n<< endl;
+            head = newnode;
+            head->array[weekday] = n;
+            head->next = NULL;
+            copy = head;
+            weekday++;
+        }
+     
     }
     Family *gethead() { return head; }
     Family *getcopy() { return copy; }
@@ -61,8 +70,10 @@ public:
 
         while (copy != NULL)
         {
-            cout << copy->array[0] << endl;
-            cout << copy->array[1] << endl;
+            for(int i = 0; i<7;i++)
+            {
+                cout<< copy->array[i]<<endl;
+            }
             copy = copy->next;
         }
     }
@@ -72,10 +83,10 @@ int main()
 {
     LinkedList one;
 
-    one.add("Jessica", "Analyssa");
-    one.add("ANIMALS", "Dogs");
-    one.add("Michael", "Jordan");
-    one.add("Luis", "Daniel");
+    one.add("Jessica");
+    one.add("ANIMALS");
+    one.add("Michael");
+    one.add("Luis");
 
     one.show();
 
