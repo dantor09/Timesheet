@@ -32,15 +32,17 @@ public:
     }
     void add(string n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
-        if(weekday ==8)
+        if (weekday == 8)
         {
             weekday = 0;
         }
 
         Family *newnode = create();
-        
+
         if (head != NULL)
-        {    cout<<"In here "<< "Name: "<< n<< endl;
+        {
+            cout << "In here "
+                 << "Name: " << n << endl;
             while (copy->next != NULL)
             {
                 copy = copy->next;
@@ -52,14 +54,15 @@ public:
             weekday++;
         }
         if (head == NULL)
-        {   cout<<"In here "<< "Name: "<< n<< endl;
+        {
+            cout << "In here "
+                 << "Name: " << n << endl;
             head = newnode;
             head->array[weekday] = n;
             head->next = NULL;
             copy = head;
             weekday++;
         }
-     
     }
     Family *gethead() { return head; }
     Family *getcopy() { return copy; }
@@ -70,9 +73,9 @@ public:
 
         while (copy != NULL)
         {
-            for(int i = 0; i<7;i++)
+            for (int i = 0; i < 7; i++)
             {
-                cout<< copy->array[i]<<endl;
+                cout << copy->array[i] << endl;
             }
             copy = copy->next;
         }
