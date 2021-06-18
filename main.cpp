@@ -5,7 +5,7 @@ using namespace std;
 struct Family
 {
     string name;
-    string array[10];
+    string array[7];
     Family *next;
 };
 
