@@ -15,7 +15,7 @@ class LinkedList
 private:
     Family *head;
     Family *copy;
-    int weekday;
+    
     Family *create()
     {
         Family *newnode = new Family;
@@ -28,7 +28,7 @@ public:
     {
         head = NULL;
         copy = head;
-        weekday = 0;
+        
     }
     void add(int n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
@@ -47,7 +47,7 @@ public:
             copy->next->hours = n;
             newnode->next = NULL;
             copy = head;
-            weekday++;
+           
         }
         if (head == NULL)
         {
@@ -56,7 +56,7 @@ public:
             head->hours = n;
             head->next = NULL;
             copy = head;
-            weekday++;
+          
         }
     }
     Family *gethead() { return head; }
