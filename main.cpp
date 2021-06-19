@@ -70,7 +70,7 @@ public:
         {
             for (int i = 0; i < 7; i++)
             {
-                cout << copy->hours
+                cout << copy->hours;
             }
             cout<<endl;
             copy = copy->next;
