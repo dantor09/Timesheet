@@ -61,9 +61,12 @@ public:
     }
     Family *gethead() { return head; }
     Family *getcopy() { return copy; }
-    void show() //This show function goes through each FAMILY node and shows family members;
+    friend void show(LinkedList & Object ); //This show function goes through each FAMILY node and shows family members;
+    
+};
+void show(LinkedList & Object ) 
     {
-        copy = head;
+        Family * copy = Object.head;
         cout << endl;
 
         while (copy != NULL)
@@ -72,18 +75,22 @@ public:
             copy = copy->next;
         }
     }
-};
 
 int main()
 {
     LinkedList one;
-
+    LinkedList two;
     one.add(9);
     one.add(1);
     one.add(7);
     one.add(1);
+    one.add(8);
+    one.add(11);
+    one.add(73);
+    one.add(12);
 
-    one.show();
+    show(one);
+    show(two);
 
     return 0;
 }
