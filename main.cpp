@@ -5,7 +5,7 @@ using namespace std;
 struct Family
 {
     string name;
-    string array[7];
+    int array[7];
     Family *next;
 };
 
@@ -30,7 +30,7 @@ public:
         copy = head;
         weekday = 0;
     }
-    void add(string n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
+    void add(int n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
         if (weekday == 8)
         {
@@ -86,10 +86,10 @@ int main()
 {
     LinkedList one;
 
-    one.add("Jessica");
-    one.add("ANIMALS");
-    one.add("Michael");
-    one.add("Luis");
+    one.add(9);
+    one.add(1);
+    one.add(7);
+    one.add(1);
 
     one.show();
 
