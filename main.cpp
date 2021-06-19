@@ -68,11 +68,7 @@ public:
 
         while (copy != NULL)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                cout << copy->hours;
-            }
-            cout<<endl;
+            cout << copy->hours;
             copy = copy->next;
         }
     }
