@@ -32,10 +32,7 @@ public:
     }
     void add(int n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
-        if (weekday == 8)
-        {
-            weekday = 0;
-        }
+        
 
         Family *newnode = create();
 
@@ -73,8 +70,9 @@ public:
         {
             for (int i = 0; i < 7; i++)
             {
-                cout << copy->array[i] << endl;
+                cout << copy->array[i];
             }
+            cout<<endl;
             copy = copy->next;
         }
     }
