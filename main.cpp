@@ -41,8 +41,7 @@ public:
 
         if (head != NULL)
         {
-            cout << "In here "
-                 << "Name: " << n << endl;
+            
             while (copy->next != NULL)
             {
                 copy = copy->next;
@@ -55,8 +54,7 @@ public:
         }
         if (head == NULL)
         {
-            cout << "In here "
-                 << "Name: " << n << endl;
+            
             head = newnode;
             head->array[weekday] = n;
             head->next = NULL;
