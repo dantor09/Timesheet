@@ -5,7 +5,7 @@ using namespace std;
 struct Family
 {
     string name;
-    int array[7];
+    int hours;
     Family *next;
 };
 
@@ -44,7 +44,7 @@ public:
                 copy = copy->next;
             }
             copy->next = newnode;
-            copy->next->array[weekday] = n;
+            copy->next->hours = n;
             newnode->next = NULL;
             copy = head;
             weekday++;
@@ -53,7 +53,7 @@ public:
         {
             
             head = newnode;
-            head->array[weekday] = n;
+            head->hours = n;
             head->next = NULL;
             copy = head;
             weekday++;
@@ -70,7 +70,7 @@ public:
         {
             for (int i = 0; i < 7; i++)
             {
-                cout << copy->array[i];
+                cout << copy->hours
             }
             cout<<endl;
             copy = copy->next;
