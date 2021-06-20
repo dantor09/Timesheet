@@ -6,6 +6,7 @@ struct Family
 {
     string name;
     int hours;
+    int hours_accumulated;
     Family *next;
 };
 
@@ -15,6 +16,7 @@ class LinkedList
 private:
     Family *head;
     Family *copy;
+    int number_of_nodes;
     
     Family *create()
     {
@@ -28,7 +30,16 @@ public:
     {
         head = NULL;
         copy = head;
+        number_of_nodes = 0;
         
+    }
+    void accumulate_hours(int hours)
+    {
+        if(number_of_nodes >=1)
+        {
+        copy->hours_accumulated = copy->hours + copy->hours;
+        }
+
     }
     void add(int n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
@@ -46,6 +57,8 @@ public:
             copy->next = newnode;
             copy->next->hours = n;
             newnode->next = NULL;
+            number_of_nodes++;
+            accumulate_hours(copy->hours);
             copy = head;
            
         }
@@ -55,6 +68,8 @@ public:
             head = newnode;
             head->hours = n;
             head->next = NULL;
+            number_of_nodes++;
+            accumulate_hours(copy->hours);
             copy = head;
           
         }
