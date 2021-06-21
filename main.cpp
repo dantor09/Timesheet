@@ -36,13 +36,14 @@ public:
     {
         Family * copy = head;
         int answer;
-        while(copy -> next  != NULL)
+        int accumulation = 0;
+        while(copy != NULL)
         {
-            copy->hours_accumulated = copy->hours_accumulated + copy->next->hours_accumulated;
-        
+            accumulation = accumulation+ copy->hours + copy->next->hours;
+            copy = copy->next->next;
         }
-        
-        return answer = copy->hours_accumulated;
+        answer = accumulation;
+        return answer ;
     }
     void add(int n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
@@ -88,10 +89,10 @@ void show(LinkedList & Object )
 
         while (copy != NULL)
         {
-            cout << copy->hours;
+            cout << copy->hours <<endl;
             copy = copy->next;
         }
-        cout<<"Hours accumulated: "<< Object.accumulate_hours();
+       cout<<"Hours accumulated: "<< Object.accumulate_hours()<<endl;
     }
 
 int main()
@@ -104,10 +105,10 @@ int main()
     one.add(1);
     one.add(7);
     one.add(1);
-    one.add(8);
-    one.add(11);
-    one.add(73);
-    one.add(12);
+    two.add(8);
+    two.add(11);
+    two.add(73);
+    two.add(12);
 
     show(one);
     show(two);
