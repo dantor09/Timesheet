@@ -16,8 +16,7 @@ class LinkedList
 private:
     Family *head;
     Family *copy;
-    int number_of_nodes;
-    
+
     Family *create()
     {
         Family *newnode = new Family;
@@ -30,16 +29,20 @@ public:
     {
         head = NULL;
         copy = head;
-        number_of_nodes = 0;
+    
         
     }
-    void accumulate_hours(int hours)
+    int accumulate_hours()
     {
-        if(number_of_nodes >=1)
+        Family * copy = head;
+        int answer;
+        while(copy -> next  != NULL)
         {
-        copy->hours_accumulated = copy->hours + copy->hours;
+            copy->hours_accumulated = copy->hours_accumulated + copy->next->hours_accumulated;
+        
         }
-
+        
+        return answer = copy->hours_accumulated;
     }
     void add(int n) //The add function adds a sequence of FAMILY nodes to the end, which each have an array size 20
     {
@@ -57,8 +60,8 @@ public:
             copy->next = newnode;
             copy->next->hours = n;
             newnode->next = NULL;
-            number_of_nodes++;
-            accumulate_hours(copy->hours);
+           
+            
             copy = head;
            
         }
@@ -68,10 +71,9 @@ public:
             head = newnode;
             head->hours = n;
             head->next = NULL;
-            number_of_nodes++;
-            accumulate_hours(copy->hours);
+            
+            
             copy = head;
-          
         }
     }
     Family *gethead() { return head; }
@@ -89,6 +91,7 @@ void show(LinkedList & Object )
             cout << copy->hours;
             copy = copy->next;
         }
+        cout<<"Hours accumulated: "<< Object.accumulate_hours();
     }
 
 int main()
