@@ -7,4 +7,6 @@ main.o: main.cpp
 clean:
 	rm *.o output
 	rm a.out output
+
+
 	
